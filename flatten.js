@@ -2,7 +2,7 @@
 const flatten = function(array) {
   let result = [];
   for (let a = 0; a < array.length; a++) {
-    if (array[a].constructor === Array) {
+    if (array[a].isArray) {
       for (let aa = 0; aa < array[a].length; aa++) {
         result.push(array[a][aa]);
       }

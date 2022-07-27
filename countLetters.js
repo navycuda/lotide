@@ -11,6 +11,9 @@ const countLetters = function(string) {
   const result = {};
 
   for (const char of string) {
+    if (char === ' ') {
+      continue;
+    }
     if (result[char]) {
       result[char]++;
     } else {

@@ -16,7 +16,7 @@ const countOnly = function(array, counts) {
   //      if array[index] === element.key
   //        add to sum
   //  return sum
-  const results = {}
+  const results = {};
 
   for (const item of array) {
     console.log(item);
@@ -30,9 +30,6 @@ const countOnly = function(array, counts) {
   }
   return results;
 };
-
-
-
 
 // Execution
 const firstNames = [

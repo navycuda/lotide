@@ -42,7 +42,6 @@ const eqObjects = function(obj1, obj2) {
         return this.orginal[key] ? compareValues(this.orginal[key], value) : false;
       },
       equals: function(obj) {
-        let count = 0;
         if (obj.keyCount !== this.keyCount) {
           return false;
         }

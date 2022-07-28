@@ -36,3 +36,16 @@ const enterprises = {
 const registry = findKey(enterprises, e => e.captain === "Garrett");
 
 assertEqual(registry, `NCC-1701-C`);
+
+const cummins = {
+  'isv': { displacement: 5.0, name: `isv5.0L`, vehicle: `TitanXD`},
+  'bt6': { displacement: 5.9, name: `bt6-5.9L`, vehicle: `DodgeRam`},
+  'isb': { displacement: 6.7, name: `isb-6.7L`, vehicle: `RamTruck`}
+};
+const isv = findKey(cummins, c => c.displacement === 5);
+const bt6 = findKey(cummins, c => c.vehicle === `DodgeRam`);
+const isb = findKey(cummins, c => c.name === `isb-6.7L`);
+
+assertEqual(isv, `isv`);
+assertEqual(bt6, `bt6`);
+assertEqual(isb, `isb`);

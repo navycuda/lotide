@@ -2,8 +2,12 @@
 
 
 // Local Functions
-const map = function() {
+const map = function(array, callback) {
+  console.log('array: ', array);
+  console.log('callback: ', callback);
 
+  const results = [];
+  return results;
 };
 
 // Execution & Test Data

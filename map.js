@@ -1,5 +1,15 @@
 // Global Functions
-
+// Copy&Paste Functions
+const eqArrays = function(first, second) {
+  return JSON.stringify(first) === JSON.stringify(second);
+};
+const assertArraysEqual = function(first, second) {
+  if (eqArrays(first, second)) {
+    console.log(`😆 Assertion Passed: ${first} === ${second}`);
+  } else {
+    console.log(`🤬 Assertion Failed: ${first} !== ${second}`);
+  }
+};
 
 // Local Functions
 const map = function(array, callback) {
@@ -12,7 +22,12 @@ const map = function(array, callback) {
 
 // Execution & Test Data
 const starships = [ `USS Enterprise`, `USS Reliant`, `USS Excelsior`, `USS Yamato`, `USS Lexington`, `USS Intrepid` ];
+const correctStarshipFirstLetters = [ `E`, `R`, `E`, `Y`, `L`, `I`];
+const resultStarship = map(starships, uss => uss[4]);
 
-const results1 = map(starships, uss => uss[0]);
+const numbers = [ 1, 2, 4, 8 ];
+const correctNumbers = [1, 4, 16, 64];
+const sqrtNumbers = map(numbers, n => n * n);
 
-console.log(results1);
+assertArraysEqual(resultStarship, correctStarshipFirstLetters);
+assertArraysEqual(sqrtNumbers, correctNumbers);

@@ -7,6 +7,8 @@ const assertEqual = function(actual, expected) {
 };
 
 // Functions
+// Tests entries
+
 // Returns true if both objects identical.
 const eqObjects = function(obj1, obj2) {
   // Create a detailed object of the object to simplify looping
@@ -16,34 +18,31 @@ const eqObjects = function(obj1, obj2) {
       orginal: obj,
       keyCount: Object.keys(obj).length,
       hasKeyValuePair: function(key, value) {
-        return obj[key] ? obj[key] === value : false;
+        return this.orginal[key] ? this.orginal[key] === value : false;
+      },
+      equals: function(obj) {
+        let count = 0;
+        if (obj.keyCount !== this.keyCount) {
+          return false;
+        }
+        for (const [key, value] of Object.entries(this.orginal)) {
+          if (!obj.hasKeyValuePair(key, value)) {
+            return false;
+          }
+        }
+        return true;
       }
     };
   };
-  console.log(obj1);
-  console.log(obj2);
 
   // Detail the input objects
   const object1 = getObjDetails(obj1);
   const object2 = getObjDetails(obj2);
 
-  console.log(object1);
-  console.log(object2);
-
   // Test the objects
-  if (object1.keyCount !== object2.keyCount) {
-    return false;
-  }
-  for (const [key, value] of Object.entries(object1.orginal)) {
-    if (!object2.hasKeyValuePair(key,value))
-      return false;
-  }
-  for (const [key, value] of Object.entries(object2.orginal)) {
-    if (!object1.hasKeyValuePair(key,value))
-      return false;
-  }
-  return true;
+  return object1.equals(object2);
 };
+
 
 
 // Execution

@@ -29,5 +29,9 @@ const numbers = [ 1, 2, 4, 8 ];
 const correctNumbers = [1, 4, 16, 64];
 const sqrtNumbers = map(numbers, n => n * n);
 
+const uncommissionedStarships = [ `Enterprise`, `Reliant`, `Excelsior`, `Yamato`, `Lexington`, `Intrepid` ];
+const commissionedStartships = map(uncommissionedStarships, uss => `USS ${uss}`);
+
 assertArraysEqual(resultStarship, correctStarshipFirstLetters);
 assertArraysEqual(sqrtNumbers, correctNumbers);
+assertArraysEqual(commissionedStartships, starships);

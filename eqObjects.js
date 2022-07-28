@@ -15,18 +15,24 @@ const eqObjects = function(obj1, obj2) {
       
     };
   };
+  console.log(obj1);
+  console.log(obj2);
 
 
+  const object1 = getObjDetails(obj1);
+  const object2 = getObjDetails(obj2);
+
+  console.log(object1);
+  console.log(object2);
 
 
-
-
-
-  console.log("Object.keys(obj1) :", Object.keys(obj1));
-  console.log("Object.keys(obj2) :", Object.keys(obj2));
-  if (obj1.keys === obj2.keys) {
-    return true;
+  if (object1.keyCount !== object2.keyCount) {
+    return false;
   }
+
+
+  
+  return true;
 };
 
 
@@ -35,5 +41,5 @@ const ab = { a: '1', b: '2' };
 const ba = { b: '2', a: '1' };
 const abc = { a: '1', b: '2', c: '3' };
 
-assertEqual(eqObjects(ab,ba),true);
+assertEqual(eqObjects(ab,ba), true);
 assertEqual(eqObjects(ab,abc), false);

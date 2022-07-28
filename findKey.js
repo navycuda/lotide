@@ -24,3 +24,15 @@ assertEqual(findKey({
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2), `noma`);
+
+const enterprises = {
+  'NCC-1701': { captain: `Pike` },
+  'NCC-1701-A': { captain: `Kirk` },
+  'NCC-1701-B': { captain: `Harriman` },
+  'NCC-1701-C': { captain: `Garrett` },
+  'NCC-1701-D': { captain: `Picard` },
+  'NCC-1701-E': { captain: `Picard` },
+};
+const registry = findKey(enterprises, e => e.captain === "Garrett");
+
+assertEqual(registry, `NCC-1701-C`);

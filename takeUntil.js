@@ -15,7 +15,7 @@ const assertArraysEqual = function(first, second) {
 const takeUntil = function(array, callback) {
   const result = [];
   for (let a = 0; a < array.length; a++) {
-    if (!callback(array[a])) {
+    if (callback(array[a])) {
       return result;
     }
     result.push(array[a]);
@@ -25,5 +25,8 @@ const takeUntil = function(array, callback) {
 
 // Execution & Test Data
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+const correct1 = [ 1, 2, 5, 7, 2 ];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
+
+assertArraysEqual(results1,correct1);

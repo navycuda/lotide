@@ -3,10 +3,10 @@
 
 // Local Functions
 const map = function(array, callback) {
-  console.log('array: ', array);
-  console.log('callback: ', callback);
-
   const results = [];
+  for (const item of array) {
+    results.push(callback(item));
+  }
   return results;
 };
 

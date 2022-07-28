@@ -7,5 +7,9 @@ const assertEqual = function(actual, expected) {
 };
 
 // Functions
+// Returns true if both objects identical.
+const eqObjects = functions(obj1, obj2) {
+
+};
 
 // Execution

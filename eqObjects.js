@@ -25,6 +25,8 @@ const eqArrays = function(first, second) {
 const compareValues = function(value1, value2) {
   if (Array.isArray(value1) && Array.isArray(value2)) {
     return eqArrays(value1,value2);
+  } else if (value1 instanceof Object && value2 instanceof Object) {
+    return eqObjects;
   }
   return value1 === value2;
 };
@@ -80,3 +82,11 @@ const cd2 = { c: "1", d: [ "2", 3, 4 ]};
 
 assertEqual(eqObjects(cd,dc), true);
 assertEqual(eqObjects(cd,cd2), false);
+
+const light0 = [{ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
+const light1 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
+const light2 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }];
+
+assertEqual(eqObjects(light0[0],light0[1]), true);
+assertEqual(eqObjects(light1[0],light1[1]), false);
+assertEqual(eqObjects(light2[0],light2[1]), false);

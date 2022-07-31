@@ -29,14 +29,14 @@ const eqObjects = function(obj0, obj1) {
 // Checks to see that arrays are equal
 const eqArrays = function(array0, array1) {
   const length = array0.length;
-  if (length !== array1.length) {
-    return false;
+  if (length === array1.length) {
+    for (let a = 0; a < length; a++) {
+      if (!eqValue(array0[a], array1[a])) {
+        return false;
+      }
+    }
+    return true;
   }
-  for (let a = 0; a < length; a++) {
-    return eqValue(array0[a], array1[a]);
-  }
-
-
   return false;
 };
 // Checks to see that values are equal
@@ -55,26 +55,41 @@ const eqValue = function(x, y) {
   return x === y;
 };
 
-
-
 // Execution & Test Data
 
-const test0 = [
-  1,
-  2
-];
-const test1 = [
-  2,
-  2
-];
-const test2 = [
-  2,
-  2
-];
+const test0 = [ 1, 2 ];
+const test1 = [ 2, 2 ];
+const test2 = [ 2, 2 ];
 
 const light0 = [{ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
 const light1 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
 const light2 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }];
+
+const object0 = {
+  name: 'object0',
+  id: 0x80020000,
+  output: () => console.log(this.name)
+};
+const object1 = {
+  name: 'object1',
+  id: 0x80020000,
+  output: () => console.log(this.name)
+};
+const object2 = {
+  name: 'object0',
+  id: 0x800202C0,
+  output: () => console.log(this.name)
+};
+const object3 = {
+  name: 'object0',
+  id: 0x80020000,
+  output: () => console.log(`Hello ${this.name}`)
+};
+const object00 = {
+  name: 'object0',
+  id: 0x80020000,
+  output: () => console.log(this.name)
+};
 
 console.log(`primatives`);
 assertEqual(eqValue(test0[0],test0[1]), false);
@@ -88,3 +103,9 @@ console.log(`objects`);
 assertEqual(eqObjects(light0[0],light0[1]), true);
 assertEqual(eqObjects(light1[0],light1[1]), false);
 assertEqual(eqObjects(light2[0],light2[1]), false);
+
+console.log(`objects, complex`);
+assertEqual(eqObjects(object0, object00), true);
+assertEqual(eqObjects(object0, object1), false);
+assertEqual(eqObjects(object0, object2), false);
+assertEqual(eqObjects(object0, object3), false);

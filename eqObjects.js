@@ -67,6 +67,16 @@ const eqObjects = function(obj1, obj2) {
 
 
 
+
+const newEqObjects = function(obj0, obj1) {
+  const obj0pairs = Object.entries(obj0);
+
+
+  return false;
+};
+
+
+
 // Execution
 const ab = { a: '1', b: '2' };
 const ba = { b: '2', a: '1' };

@@ -12,6 +12,11 @@ const countOnly = require(`./modules/countOnly`);
 // Returns an index of all the characters and
 //   an array of their positions within the string.
 const letterPositions = require(`./modules/letterPositions`);
+// eqArrays, eqObjects => eqValue,  which is recursive and has the
+//   parents functions to allowed eqArrays and eqObjects to work.
+const eqArrays = require(`./modules/eqArrays`);
+const eqObjects = require(`./modules/eqObjects`);
+const eqValue = require(`./modules/eqValue`);
 
 // Exports
 module.exports = {

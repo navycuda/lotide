@@ -1,6 +1,4 @@
-// Required
-
-// Function
+// Functions
 const eqArrays = function(array0, array1) {
   const length = array0.length;
   if (length === array1.length) {
@@ -47,17 +45,3 @@ const eqValue = function(x, y) {
 
 // Exports
 module.exports = eqValue;
-// module.exports = function (x, y) {
-//   // Make sure the types match or dump them to the curb.
-//   if (typeof x !== typeof y) {
-//     return false;
-//   } else if (typeof x === 'function') {
-//     return x.toString() === y.toString();
-//   } else if (typeof x === 'object') {
-//     if (Array.isArray(x) && Array.isArray(y)) {
-//       return eqArrays(x,y);
-//     }
-//     return eqObjects(x,y);
-//   }
-//   return x === y;
-// };

@@ -1,4 +1,5 @@
 // Required
+const assert = require(`chai`).assert;
 const assertArraysEqual = require(`../assertArraysEqual`);
 
 // Testing parameters

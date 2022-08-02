@@ -1,35 +1,3 @@
-// Copy&Paste Functions
-const eqArrays = function(first, second) {
-  return JSON.stringify(first) === JSON.stringify(second);
-};
-const assertArraysEqual = function(first, second) {
-  if (eqArrays(first, second)) {
-    console.log(`😆 Assertion Passed: ${first} === ${second}`);
-  } else {
-    console.log(`🤬 Assertion Failed: ${first} !== ${second}`);
-  }
-};
-
-// Functions
-const letterPositions = function(sentence) {
-  const results = {};
-
-
-  for (let s = 0; s < sentence.length; s++) {
-    if (sentence[s] === ' ') {
-      continue;
-    }
-    if (results[sentence[s]]) {
-      results[sentence[s]].push(s);
-    } else {
-      results[sentence[s]] = [ s ];
-    }
-  }
-
-  
-  return results;
-};
-
 // Execution
 //                    10        20
 //           012345678901234567890123456

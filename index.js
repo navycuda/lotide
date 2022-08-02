@@ -9,7 +9,9 @@ const middle = require(`./modules/middle`);
 const countLetters = require(`./modules/countLetters`);
 // Returns a count of instances a specific string occurs in an array
 const countOnly = require(`./modules/countOnly`);
-
+// Returns an index of all the characters and
+//   an array of their positions within the string.
+const letterPositions = require(`./modules/letterPositions`);
 
 // Exports
 module.exports = {

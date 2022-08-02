@@ -30,4 +30,5 @@ The following functions are currently implemented:
 * `tail([])` : Returns an array with everything except the first element.
 * `middle([])` : Returns an array with either one or two elements from the middle.
 * `countLetters('')` : Returns an object with a count of all the characters excluding spaces.
-* `countOnly([], {})` : Counts the number of instances a key with the value of true exists within the supplied array. 
+* `countOnly([], {})` : Counts the number of instances a key with the value of true exists within the supplied array.
+* `letterPositions('')` : Returns an index of all the characters and an array of their positions within the string.

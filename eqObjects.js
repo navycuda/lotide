@@ -1,121 +1,27 @@
-// Global Functions
-// Function used to test assertions
-const assertEqual = function(actual, expected) {
-  if (actual === expected)
-    console.log(`  😆 Assertion Passed: ${actual} === ${expected}`);
-  else
-    console.log(`  🤬 Assertion Failed: ${actual} !== ${expected}`);
-};
+// Required
+const eqValue = require(`./eqValue`);
 
 // Local Functions
 // Checks to see if objects are equal
-const eqObjects = function(obj0, obj1) {
-  // Setup the objects
-  const obj0Pairs = [Object.keys(obj0), Object.values(obj0)];
-  const obj1Pairs = [Object.keys(obj1), Object.values(obj1)];
-  // eliminate the obvious
-  const length = obj0Pairs.length;
-  if (length === obj1Pairs.length) {
-    for (let o = 0; o < length; o++) {
-      if (!eqValue(obj0Pairs[o],obj1Pairs[o])) {
-        return false;
-      }
-    }
-    // if all other checks pass, return true
-    return true;
-  }
-  return false;
-};
-// Checks to see that arrays are equal
-const eqArrays = function(array0, array1) {
-  const length = array0.length;
-  if (length === array1.length) {
-    for (let a = 0; a < length; a++) {
-      if (!eqValue(array0[a], array1[a])) {
-        return false;
-      }
-    }
-    return true;
-  }
-  return false;
-};
-// Checks to see that values are equal
-const eqValue = function(x, y) {
-  // Make sure the types match or dump them to the curb.
-  if (typeof x !== typeof y) {
-    return false;
-  } else if (typeof x === 'function') {
-    return x.toString() === y.toString();
-  } else if (typeof x === 'object') {
-    if (Array.isArray(x) && Array.isArray(y)) {
-      return eqArrays(x,y);
-    }
-    return eqObjects(x,y);
-  }
-  return x === y;
-};
+// const eqObjects = function(obj0, obj1) {
+//   // Setup the objects
+//   const obj0Pairs = [Object.keys(obj0), Object.values(obj0)];
+//   const obj1Pairs = [Object.keys(obj1), Object.values(obj1)];
+//   // eliminate the obvious
+//   const length = obj0Pairs.length;
+//   if (length === obj1Pairs.length) {
+//     for (let o = 0; o < length; o++) {
+//       if (!eqValue(obj0Pairs[o],obj1Pairs[o])) {
+//         return false;
+//       }
+//     }
+//     // if all other checks pass, return true
+//     return true;
+//   }
+//   return false;
+// };
 
-// Execution & Test Data
+const eqObjects = (actual, correct) => eqValue(actual, correct);
 
-const test0 = [ 1, 2 ];
-const test1 = [ 2, 2 ];
-const test2 = [ 2, 2 ];
-
-const light0 = [{ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
-const light1 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }];
-const light2 = [{ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }];
-
-const nested0 = [[[2, 3], [4]], [[2, 3], [4]]];
-const nested1 = [[[2, 3], [4]], [[2, 3], [4, 5]]];
-const nested2 = [[[2, 3], [4]], [[2, 3], 4]];
-
-const object0 = {
-  name: 'object0',
-  id: 0x80020000,
-  output: () => console.log(this.name)
-};
-const object1 = {
-  name: 'object1',
-  id: 0x80020000,
-  output: () => console.log(this.name)
-};
-const object2 = {
-  name: 'object0',
-  id: 0x800202C0,
-  output: () => console.log(this.name)
-};
-const object3 = {
-  name: 'object0',
-  id: 0x80020000,
-  output: () => console.log(`Hello ${this.name}`)
-};
-const object00 = {
-  name: 'object0',
-  id: 0x80020000,
-  output: () => console.log(this.name)
-};
-
-console.log(`primatives`);
-assertEqual(eqValue(test0[0],test0[1]), false);
-assertEqual(eqValue(test1[0],test1[1]), true);
-
-console.log(`arrays`);
-assertEqual(eqArrays(test0, test1), false);
-assertEqual(eqArrays(test1, test2), true);
-
-console.log(`objects`);
-assertEqual(eqObjects(light0[0],light0[1]), true);
-assertEqual(eqObjects(light1[0],light1[1]), false);
-assertEqual(eqObjects(light2[0],light2[1]), false);
-
-console.log(`objects, complex`);
-assertEqual(eqObjects(object0, object00), true);
-assertEqual(eqObjects(object0, object1), false);
-assertEqual(eqObjects(object0, object2), false);
-assertEqual(eqObjects(object0, object3), false);
-
-console.log(`nested arrays`);
-assertEqual(eqArrays(nested0[0], nested0[1]), true);
-assertEqual(eqArrays(nested1[0], nested1[1]), false);
-assertEqual(eqArrays(nested2[0], nested2[1]), false);
-
+// Exports
+module.exports = eqObjects;

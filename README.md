@@ -43,3 +43,4 @@ The following functions are currently implemented:
 * `eqValue(any,any)` : Universal, recursive function for compairing values.
 * `flatten(array)` : Flattens nested arrays into one flat array.
 * `findKey({},()=>{})` : Searches an object for a key using a callback function.
+* `map([],()=>{})` : Does work to array items according to the callback

@@ -21,6 +21,8 @@ const eqValue = require(`./modules/eqValue`);
 const flatten = require(`./modules/flatten`);
 // findKey looks for an object key with a callback function
 const findKey = require(`./modules/findKey`);
+// map does work to array items using a callback function
+const map = require(`./modules/map`);
 
 // Exports
 module.exports = {
@@ -34,5 +36,6 @@ module.exports = {
   eqObjects,
   eqValue,
   flatten,
-  findKey
+  findKey,
+  map
 };

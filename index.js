@@ -17,10 +17,18 @@ const letterPositions = require(`./modules/letterPositions`);
 const eqArrays = require(`./modules/eqArrays`);
 const eqObjects = require(`./modules/eqObjects`);
 const eqValue = require(`./modules/eqValue`);
+// Returns an array that has been flattened.
+const flatten = require(`./modules/flatten`);
 
 // Exports
 module.exports = {
   head,
   tail,
-  middle
+  middle,
+  countLetters,
+  countOnly,
+  letterPositions,
+  eqArrays,
+  eqObjects,
+  eqValue
 };

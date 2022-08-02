@@ -25,9 +25,11 @@ const findKey = require(`./modules/findKey`);
 const map = require(`./modules/map`);
 // findKeybyValue looks for a key according to the supplied value
 const findKeyByValue = require(`./modules/findKeyByValue`);
-// without Removes elements from the first array if they exist 
+// without Removes elements from the first array if they exist
 //   in the second.  Current implementation only supports primatives.
 const without = require(`./modules/without`);
+// takeUntil builds an array up until the callback is satisfied.
+const takeUntil = require(`./modules/takeUntil`);
 
 // Exports
 module.exports = {
@@ -44,5 +46,6 @@ module.exports = {
   findKey,
   map,
   findKeyByValue,
-  without
+  without,
+  takeUntil
 };

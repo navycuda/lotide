@@ -40,4 +40,5 @@ The following functions are currently implemented:
 * `letterPositions('')` : Returns an index of all the characters and an array of their positions within the string.
 * `eqArrays([],[])` : (x,y) => eqValue(x,y)
 * `eqObjects({},{})` : (x,y) => eqValue(x,y)
-* `eqValue(any,any)` : Universal, recursive funtion for compairing values.
+* `eqValue(any,any)` : Universal, recursive function for compairing values.
+* `flatten(array)` : Flattens nested arrays into one flat array.

@@ -25,6 +25,9 @@ const findKey = require(`./modules/findKey`);
 const map = require(`./modules/map`);
 // findKeybyValue looks for a key according to the supplied value
 const findKeyByValue = require(`./modules/findKeyByValue`);
+// without Removes elements from the first array if they exist 
+//   in the second.  Current implementation only supports primatives.
+const without = require(`./modules/without`);
 
 // Exports
 module.exports = {
@@ -40,5 +43,6 @@ module.exports = {
   flatten,
   findKey,
   map,
-  findKeyByValue
+  findKeyByValue,
+  without
 };

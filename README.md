@@ -45,3 +45,4 @@ The following functions are currently implemented:
 * `findKey({},()=>{})` : Searches an object for a key using a callback function.
 * `map([],()=>{})` : Does work to array items according to the callback.
 * `findKeyByValue({},'')` : Finds an object key by a search value
+* `without([],[])` : Removes elements from the first array if they exist in the second.  Current implementation only supports primatives.

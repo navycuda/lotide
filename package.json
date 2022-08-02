@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@navycuda/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "Educational Only - A mini clone of the https://lodash.com library",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/navycuda/lotide.git"
   },
-  "author": "",
+  "author": "navycuda",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/navycuda/lotide/issues"

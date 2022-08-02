@@ -19,6 +19,8 @@ const eqObjects = require(`./modules/eqObjects`);
 const eqValue = require(`./modules/eqValue`);
 // Returns an array that has been flattened.
 const flatten = require(`./modules/flatten`);
+// findKey looks for an object key with a callback function
+const findKey = require(`./modules/findKey`);
 
 // Exports
 module.exports = {
@@ -30,5 +32,7 @@ module.exports = {
   letterPositions,
   eqArrays,
   eqObjects,
-  eqValue
+  eqValue,
+  flatten,
+  findKey
 };

@@ -12,15 +12,21 @@ This project was created and published by me as part of my learnings at Lighthou
 
 **Install it:**
 
-`npm install @navycuda/lotide`
+```
+npm install @navycuda/lotide
+```
 
 **Require it:**
 
-`const _ = require('@navycuda/lotide');`
+```javascript
+const _ = require('@navycuda/lotide');
+```
 
 **Call it:**
 
-`const results = _.tail([1, 2, 3]) // => [2, 3]`
+```javascript
+const results = _.tail([1, 2, 3]) // => [2, 3]
+```
 
 ## Documentation
 
@@ -32,3 +38,6 @@ The following functions are currently implemented:
 * `countLetters('')` : Returns an object with a count of all the characters excluding spaces.
 * `countOnly([], {})` : Counts the number of instances a key with the value of true exists within the supplied array.
 * `letterPositions('')` : Returns an index of all the characters and an array of their positions within the string.
+* `eqArrays([],[])` : (x,y) => eqValue(x,y)
+* `eqObjects({},{})` : (x,y) => eqValue(x,y)
+* `eqValue(any,any)` : Universal, recursive funtion for compairing values.

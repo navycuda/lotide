@@ -31,6 +31,9 @@ const results = _.tail([1, 2, 3]) // => [2, 3]
 ## Documentation
 
 The following functions are currently implemented:
+```
+Please note that the majority of the unit testing was not converted from simple functions to mocha/chai.
+```
 
 * `head([])` : Returns the first element of an array.
 * `tail([])` : Returns an array with everything except the first element.

@@ -30,6 +30,8 @@ const findKeyByValue = require(`./modules/findKeyByValue`);
 const without = require(`./modules/without`);
 // takeUntil builds an array up until the callback is satisfied.
 const takeUntil = require(`./modules/takeUntil`);
+// outputToConsole is used for outputting and error or description out to the console
+const outputToConsole = require(`./modules/outputToConsole`);
 
 // Exports
 module.exports = {

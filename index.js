@@ -49,5 +49,6 @@ module.exports = {
   map,
   findKeyByValue,
   without,
-  takeUntil
+  takeUntil,
+  outputToConsole
 };

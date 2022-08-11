@@ -34,6 +34,10 @@ const takeUntil = require(`./modules/takeUntil`);
 const outputToConsole = require(`./modules/outputToConsole`);
 // Used to generate a random alphanumeric string.
 const getRandomAlphanumericString = require('./modules/getRandomAlphanumericString');
+// Used to advance a number in a circular pattern within a range
+const circularNumbers = require('./modules/circularNumbers');
+// Takes a string and reassembles it using only the characters in the safeString
+const makeStringSafe = require('./modules/makeStringSafe');
 
 // Exports
 module.exports = {
@@ -53,5 +57,7 @@ module.exports = {
   without,
   takeUntil,
   outputToConsole,
-  getRandomAlphanumericString
+  getRandomAlphanumericString,
+  circularNumbers,
+  makeStringSafe
 };

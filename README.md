@@ -52,3 +52,5 @@ Please note that the majority of the unit testing was not converted from simple 
 * `takeUntil([],()=>{})` : Builds an array up until the callback is satisfied.
 * `outputToConsole(err,any)` : Used to output simple things to the console.
 * `getRandomAlphanumericString(length)` : Generates a random alphanumeric string to length.
+* `circularNumbers(position,limit)` : Advances or Retards position within the limit, reseting to opposite value at extents.
+* `makeStringSafe(string, safeString)` : Rebuilds strings with only the characters available in safeString  

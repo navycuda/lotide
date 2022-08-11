@@ -50,4 +50,5 @@ Please note that the majority of the unit testing was not converted from simple 
 * `findKeyByValue({},'')` : Finds an object key by a search value
 * `without([],[])` : Removes elements from the first array if they exist in the second.  Current implementation only supports primatives.
 * `takeUntil([],()=>{})` : Builds an array up until the callback is satisfied.
-* `outputToConsole(err,any)` : Used to output simple things to the console
+* `outputToConsole(err,any)` : Used to output simple things to the console.
+* `getRandomAlphanumericString(length)` : Generates a random alphanumeric string to length.

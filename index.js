@@ -32,6 +32,8 @@ const without = require(`./modules/without`);
 const takeUntil = require(`./modules/takeUntil`);
 // outputToConsole is used for outputting and error or description out to the console
 const outputToConsole = require(`./modules/outputToConsole`);
+// Used to generate a random alphanumeric string.
+const getRandomAlphanumericString = require('./modules/getRandomAlphanumericString');
 
 // Exports
 module.exports = {
@@ -50,5 +52,6 @@ module.exports = {
   findKeyByValue,
   without,
   takeUntil,
-  outputToConsole
+  outputToConsole,
+  getRandomAlphanumericString
 };

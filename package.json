@@ -1,6 +1,6 @@
 {
   "name": "@navycuda/lotide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Educational Only - A mini clone of the https://lodash.com library",
   "main": "index.js",
   "directories": {
